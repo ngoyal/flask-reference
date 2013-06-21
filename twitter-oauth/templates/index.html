@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>Welcome</title>
+    </head>
+    <body>
+{% if token %}
+        <h2>Welcome {{ user }}</h2>
+        <h3>Your Twitter Token for this app is:</h3>
+        <ul>
+            <li>Token: {{ token[0] }}</li>
+            <li>Token Secret: {{ token[1] }}</li>
+        </ul>
+        <p><a href="{{ url_for('logout') }}">Logout</a></p>
+{% else %}
+        <h2>Welcome</h2>
+        <p>Please <a href="{{ url_for('login') }}">Login with Twitter</a></p>
+{% endif %}
+    </body>
+</html>
